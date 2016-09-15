@@ -34,4 +34,42 @@
 
  	//code goes here
 
+ 	$("#addEmployeeForm").validate({
+  rules: {
+    // simple rule, converted to {required:true}
+    firstName: {
+    	required: true,
+        minlength: 2
+    },
+    lastName: {
+    	required: true,
+    	minlength: 2
+    },
+    email: {
+    	required:true,
+    	email:true
+    },
+    homePhone: {
+    	phoneUS: true
+    },
+    cellPhone: {
+    	phoneUS: true
+    },
+    password: {
+    	pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^\&*\)\(+=._-])[0-9a-zA-Z!@#\$%\^\&*\)\(+=._-]{8,}$/
+    },
+    password_verify:{
+    	equalTo: "#password"
+    }
+},
+    messages: {
+    	password: {
+    		pattern: "Enter a valid password"
+    	}
+    },
+    errorClass:"text-danger"
+  
+
+	})
+
  })

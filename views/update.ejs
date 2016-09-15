@@ -9,7 +9,7 @@
 <form action="#" method="">
   <div class="form-group">
     <label for="employeeId">SELECT AN EMPLOYEE TO UPDATE</label><br/>
-    <select id="employeeId" name="employeeId">
+    <select id="employeeId" name="employeeId" class= "selectpicker" data-header="Select an employee" data-live-search="true">
     <% if(typeof employees != "undefined" && employees.length > 0){ %>
       <% employees.forEach(function(employee){ %>
         <option value="<%= employee.id %>" data-subtext="<%=employee.email%>">
